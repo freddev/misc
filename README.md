@@ -1,6 +1,6 @@
 __misc__
 - [azure devops](azure_devops/README.md)
-- develop and deploy a
+- develop and deploy
   - [angular crud app with spring boot backend to aws](angular_spring_aws/README.md)
   - [react, html5 crud app with nodejs backend to gcp](react_nodejs_gcp/README.md)
   - [vuejst crud app with c# backend using postgres to azure](vuejs_csharp_postgres_azure/README.md)
@@ -29,5 +29,6 @@ __misc__
 - [elastisearch](elastisearch/README.md)
 - [oauth2](oauth2/README.md)
 - [openid connect](openid_connect/README.md)
+- [test](test/README.md)
 
 _fredrik (at) conva se_
