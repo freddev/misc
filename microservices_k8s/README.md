@@ -1,0 +1,1 @@
+__webapp using microservices, jwt, rabbitmq, redis, mongodb deployed to kubernetes in aws__
