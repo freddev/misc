@@ -1,6 +1,6 @@
-# Creating a CRUD Web Application with Angular Frontend and Spring Boot Backend against a Document Database and Deploying it to AWS
-
-## Step 1: Create a Document Database in MongoDB Atlas
+### crud webapp with angular fe, springboot be, deployed to aws - fredrik vallbo
+how to create a crud web application with angular frontend and spring boot backend, deployed to aws 
+#### step 1: create a document database in mongodb atlas
 
 To store our data, we will use a MongoDB document database. We will use MongoDB Atlas, which is a cloud-based service that offers a free-tier database. Here are the steps to create a database in MongoDB Atlas:
 
@@ -13,7 +13,7 @@ To store our data, we will use a MongoDB document database. We will use MongoDB 
 
 When your database is ready, click on "Connect" and follow the instructions to connect to your database.
 
-## Step 2: Create a Spring Boot Backend
+#### step 2: create a spring boot backend
 
 Now that we have our database ready, let's create our Spring Boot backend. Here are the steps:
 
@@ -143,7 +143,7 @@ Now that we have our database ready, let's create our Spring Boot backend. Here 
       java -jar target/my-app-0.0.1-SNAPSHOT.jar
       ```
 11. Open your web browser and navigate to http://localhost:8080. You should see a JSON representation of your products. You can also test your API endpoints using a tool like Postman.
-# Step 2: Create an Angular frontend
+#### step 3: create an angular frontend
 1. Now that our backend is up and running, let's move on to creating the frontend of our web application using Angular.
 2. Install the latest version of Angular CLI by running the following command:
       ```bash
@@ -261,7 +261,7 @@ Now that we have our database ready, let's create our Spring Boot backend. Here 
     ```bash
     ng build --prod
     ``` 
-# Step 4: Package and deploy to AWS
+#### Step 4: package and deploy to aws
 1. Now that our Angular application is built, let's deploy it to AWS using Elastic Beanstalk. 
 Navigate to the AWS Management Console and search for Elastic Beanstalk.
 2. Click on "Create Application" and follow the steps to create a new application.
