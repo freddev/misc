@@ -1,4 +1,4 @@
-#### Azure devops - fredrik vallbo
+#### Azure devops
 Azure DevOps is a suite of cloud-based tools and services provided by Microsoft to help developers plan, build, test, and deploy software applications. 
 It includes features for version control, continuous integration and delivery (CI/CD), project management, and more. 
 
@@ -18,3 +18,72 @@ It includes features for version control, continuous integration and delivery (C
 14. Add deployment tasks to your pipeline, such as copying artifacts to the deployment server and running scripts to start the application.
 15. Once your release pipeline is configured, save and run it to deploy your application to the target environment.
 16. That's it! Your CI/CD build chain is now set up in Azure DevOps. Whenever you commit new code changes to your repository, Azure DevOps will automatically trigger a new build and deploy it to your environment.
+
+```yaml
+trigger:
+- main
+
+variables:
+  azureSubscription: 'your-azure-subscription-name'
+  appName: 'your-app-name'
+  resourceGroupName: 'your-resource-group-name'
+  region: 'your-region-name'
+  javaVersion: '11'
+
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: MavenAuthenticate@0
+      displayName: 'Maven Authenticate'
+      inputs:
+        artifactFeeds: 'your-maven-feed-name'
+    - task: Maven@3
+      displayName: 'Maven Build'
+      inputs:
+        mavenPomFile: 'pom.xml'
+        mavenOptions: '-Xmx3072m'
+        javaHomeOption: 'JDKVersion'
+        jdkVersionOption: '1.11'
+        jdkArchitectureOption: 'x64'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        goals: 'package'
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact'
+      inputs:
+        artifactName: 'drop'
+        pathToPublish: '$(Build.SourcesDirectory)/target'
+        publishLocation: 'Container'
+
+- stage: Deploy
+  displayName: Deploy stage
+  dependsOn: Build
+  jobs:
+  - deployment: DeploymentJob
+    environment: 'your-environment-name'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureWebApp@1
+            displayName: 'Azure Web App Deploy'
+            inputs:
+              azureSubscription: $(azureSubscription)
+              appType: 'webAppLinux'
+              appName: $(appName)
+              package: '$(System.ArtifactsDirectory)/drop/*.jar'
+              runtimeStack: 'JAVA|$(javaVersion)'
+              resourceGroupName: $(resourceGroupName)
+              regionName: $(region)
+              slotName: 'production'
+              javaVersion: $(javaVersion)
+              startupCommand: 'java -jar *.jar'
+```
+
+_fredrik (at) conva se_ 

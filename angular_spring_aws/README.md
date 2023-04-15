@@ -1,4 +1,4 @@
-### crud webapp with angular fe, springboot be, deployed to aws - fredrik vallbo
+### crud webapp with angular fe, springboot be, deployed to aws
 how to create a crud web application with angular frontend and spring boot backend, deployed to aws 
 #### step 1: create a document database in mongodb atlas
 
@@ -271,3 +271,5 @@ Navigate to the AWS Management Console and search for Elastic Beanstalk.
 6. Configure your environment by giving it a name, setting up the load balancer, and choosing your database and storage options.
 7. Review your environment settings and create your environment.
 8. Once your environment is created, you can access your deployed Angular application by clicking on the environment URL that is displayed in the Elastic Beanstalk console.
+
+_fredrik (at) conva se_

@@ -8,24 +8,26 @@ __misc__
   - [webapp using microservices, jwt, rabbitmq, redis, mongodb deployed to kubernetes in aws](microservices_k8s/README.md)
   - [webapp using lambdas and mongodb](lambdas_mongodb/README.md)
   - [api secured by jwt](api_jwt/README.md)
-  - wso2
-  - typescript
-  - bigdata
-  - nginx
-  - machine learning
-  - grafana, prometheus, jenkins
-  - selenium
-  - webmethods
-  - linux
-  - mule
-  - soap
-  - postgres
-  - javaee
-  - redux
-  - material design
-  - openapi
-  - html5
-  - elastisearch
-  - oauth2
-  - openid connect
-- fredrik vallbo
+- [wso2](wso2/README.md)
+- [typescript](typescript/README.md)
+- [bigdata](pandas/README.md)
+- [nginx](nginx/README.md)
+- [machine learning](machine_learning/README.md)
+- [grafana](grafana/README.md)
+- [prometheus](prometheus/README.md)
+- [jenkins](jenkins/README.md)
+- [elastisearch](elastisearch/README.md)
+- [selenium](selenium/README.md)
+- [linux](linux/README.md)
+- [soap](soap/README.md)
+- [postgres](postgres/README.md)
+- [javaee](javaee/README.md)
+- [redux](redux/README.md)
+- [material design](material_design/README.md)
+- [openapi](openapi/README.md)
+- [html5](html5/README.md)
+- [elastisearch](elastisearch/README.md)
+- [oauth2](oauth2/README.md)
+- [openid connect](openid_connect/README.md)
+
+_fredrik (at) conva se_
