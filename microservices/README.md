@@ -159,5 +159,58 @@ public class Product {
 }
 
 ``` 
+```
+docker build -t my-app:v1 .
+docker push my-registry/my-app:v1
+
+```
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: my-registry/my-app:v1
+        ports:
+        - containerPort: 8080
+
+```
+```
+kubectl apply -f deployment.yaml
+
+```
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  selector:
+    app: my-app
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer
+
+```
+```
+kubectl apply -f service.yaml
+kubectl get deployments
+kubectl get pods
+kubectl get services
+
+```
 
 _fredrik (at) conva se_
