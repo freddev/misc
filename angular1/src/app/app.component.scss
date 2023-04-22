@@ -1,0 +1,19 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+ 
+.list-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.list-item-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+mat-list-item {
+  padding: 10px 0;
+}

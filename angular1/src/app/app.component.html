@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <span>Crud Application</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button (click)="openAddEditEmpForm()">
+    ADD EMPLOYEE
+  </button>
+</mat-toolbar>
+
+<mat-card class="list-container">
+  <mat-list>
+    <ng-container *ngFor="let item of items">
+      <mat-list-item>
+        <div class="list-item-content">
+          <div>{{ item.firstName }}</div>
+          <div>{{ item.lastName }}</div>
+          <div>{{ item.email }}</div>
+          <div>{{ item.learningDate }}</div>
+        </div>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </ng-container>
+  </mat-list>
+</mat-card>
