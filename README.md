@@ -1,15 +1,7 @@
 __misc__
-- background
-  - This repo contains some projects and snippets showing various programming techniques that I have worked with.
-    What to put in a portifolio repo like this is not so easy to know. Most of the time I work for money and 
-    those projects are not public. Some of my private projects I don't want to show, because of business reasons. 
-    Which coding tools are ok to use? Should things be developed in the most efficient way, reusing code? Or maybe in 
-    the most complicated way to show skills? Should it be deployed and what will it cost if somebody runs a massive 
-    performance test on an auto scaling instance set? This repo is some kind of compromise to show I have some 
-    experience in developing and customizing code. Keep in mind this is developed on free time.    
 - projects
   - [time report - react](react/time-report)
-  - [community - angular](angular/community)
+  - [community - angular](https://github.com/freddev/icicle)
   - [blog - vue](vue/blog)
   - [icicle - java, spring](https://github.com/freddev/icicle)
 - snippets
@@ -44,5 +36,12 @@ __misc__
   - [oauth2](oauth2/README.md)
   - [openid connect](openid_connect/README.md)
   - [test](test/README.md)
-
-_fredrik (at) conva se_
+- background
+  - This repo contains some projects and snippets showing various programming techniques that I have worked with.
+    What to put in a portifolio repo like this is not so easy to know. Most of the time I work for money and
+    those projects are not public. Some of my private projects I don't want to show, because of business reasons.
+    Which coding tools are ok to use? Should things be developed in the most efficient way, reusing code? Or maybe in
+    the most complicated way to show skills? Should it be deployed and what will it cost if somebody runs a massive
+    performance test on an auto scaling instance set? This repo is some kind of compromise to show I have some
+    experience in developing and customizing code. Keep in mind this is developed on free time. 
+  - _fredrik (at) conva se_
