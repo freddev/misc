@@ -1,9 +1,5 @@
 # Time report
 
-```
-npx create-remix@latest --template remix-run/grunge-stack
-```
-
 ## What's in the stack
 
 - [AWS deployment](https://aws.com) with [Architect](https://arc.codes/)
