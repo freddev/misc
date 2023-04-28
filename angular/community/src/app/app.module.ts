@@ -1,38 +1,45 @@
-import {APP_INITIALIZER, NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import {FooterComponent} from './core/layout/footer.component';
-import {HeaderComponent} from './core/layout/header.component';
-import {JwtService} from './core/services/jwt.service';
-import {UserService} from './core/services/user.service';
-import {EMPTY} from 'rxjs';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {TokenInterceptor} from './core/interceptors/token.interceptor';
-import {ErrorInterceptor} from './core/interceptors/error.interceptor';
-import {marked} from 'marked';
-import {ApiInterceptor} from './core/interceptors/api.interceptor';
-
-export function initAuth(jwtService: JwtService, userService: UserService) {
-  return () =>  jwtService.getToken() ? userService.getCurrentUser() : EMPTY;
-}
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { EmpAddEditComponent } from './emp-add-edit/emp-add-edit.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    EmpAddEditComponent
+  ],
   imports: [
     BrowserModule,
-    FooterComponent,
-    HeaderComponent,
     AppRoutingModule,
-    HttpClientModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatListModule,
+    MatCardModule,
+    FormsModule
   ],
-  providers: [
-    {provide: APP_INITIALIZER, useFactory: initAuth, deps: [JwtService, UserService], multi: true},
-    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
